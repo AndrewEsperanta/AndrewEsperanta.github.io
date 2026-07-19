@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0f1118;
+  --bg-elevated: #141820;
+
+  --accent-primary: #00d4ff;
+  --accent-secondary: #0099cc;
+  --accent-dim: #005577;
+  --accent-glow: rgba(0, 212, 255, 0.15);
+
+  --text-primary: #e8edf3;
+  --text-secondary: #8899aa;
+  --text-muted: #4a5568;
+
+  --status-active: #00ff88;
+
+  --border-subtle: rgba(0, 212, 255, 0.12);
+  --border-visible: rgba(0, 212, 255, 0.3);
+
+  --font-mono: "Share Tech Mono", monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.grid-bg {
+  position: relative;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 212, 255, 0.012) 2px,
+    rgba(0, 212, 255, 0.012) 4px
+  );
+}
+
+.geometric-card {
+  --clip-size: 14px;
+  position: relative;
+  background: var(--bg-elevated);
+  clip-path: polygon(
+    var(--clip-size) 0%,
+    100% 0%,
+    100% calc(100% - var(--clip-size)),
+    calc(100% - var(--clip-size)) 100%,
+    0% 100%,
+    0% var(--clip-size)
+  );
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.geometric-card-wrapper {
+  position: relative;
+  filter: drop-shadow(0 0 4px rgba(0, 212, 255, 0.1));
+  transition: filter 0.3s ease;
+}
+
+.geometric-card-wrapper:hover {
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+}
+
+.geometric-border {
+  --clip-size: 14px;
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--border-visible), var(--accent-dim));
+  clip-path: polygon(
+    var(--clip-size) 0%,
+    100% 0%,
+    100% calc(100% - var(--clip-size)),
+    calc(100% - var(--clip-size)) 100%,
+    0% 100%,
+    0% var(--clip-size)
+  );
+  z-index: -1;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  color: var(--accent-primary);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section-header::before,
+.section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-visible), transparent);
+}
+
+.section-header::before {
+  background: linear-gradient(90deg, transparent, var(--border-visible));
+}
+
+.section-header::after {
+  background: linear-gradient(90deg, var(--border-visible), transparent);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5),
+               0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-cursor {
+  animation: blink 1.06s step-end infinite;
+  color: var(--accent-primary);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--status-active);
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--status-active);
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.link-item {
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+}
+
+.link-item:hover {
+  color: var(--accent-primary);
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+  }
+}
