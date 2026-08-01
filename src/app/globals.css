@@ -68,7 +68,7 @@ html, body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center right;
-  opacity: 0.18;
+  opacity: 0.35;
   pointer-events: none;
   z-index: 0;
 }
