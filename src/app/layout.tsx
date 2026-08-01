@@ -33,7 +33,10 @@ export default function RootLayout({
     <html lang="en" className={`${shareTechMono.variable} ${inter.variable}`}>
       <body>
         <ScanlineOverlay />
-        <div className="grid-bg">{children}</div>
+        <div className="grid-bg">
+          <div className="ascii-bg" aria-hidden="true" />
+          {children}
+        </div>
       </body>
     </html>
   );
