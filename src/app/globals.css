@@ -59,11 +59,11 @@ html, body {
 }
 
 .ascii-bg {
-  position: fixed;
-  top: -10%;
+  position: absolute;
+  top: 0;
   right: -10%;
   width: 75%;
-  height: 120vh;
+  height: 100vh;
   background-image: url('/ascii-char.png');
   background-size: contain;
   background-repeat: no-repeat;
