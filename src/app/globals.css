@@ -65,19 +65,19 @@ html, body {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.15;
+  opacity: 0.3;
 }
 
 .topo-bg path {
   fill: none;
   stroke: var(--accent-primary);
-  stroke-width: 1.2;
+  stroke-width: 1.5;
 }
 
 .topo-bg ellipse {
   fill: none;
   stroke: var(--accent-primary);
-  stroke-width: 1.2;
+  stroke-width: 1.5;
 }
 
 .ascii-bg {
