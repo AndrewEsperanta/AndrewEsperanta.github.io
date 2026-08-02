@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Share_Tech_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { ScanlineOverlay } from "@/components/ScanlineOverlay";
+import { TopoBackground } from "@/components/TopoBackground";
 
 const shareTechMono = Share_Tech_Mono({
   weight: "400",
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body>
         <ScanlineOverlay />
         <div className="grid-bg">
+          <TopoBackground />
           <div className="ascii-bg" aria-hidden="true" />
           {children}
         </div>
