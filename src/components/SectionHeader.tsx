@@ -1,7 +1,9 @@
-export function SectionHeader({ children }: { children: React.ReactNode }) {
+export function SectionHeader({ children, number, id }: { children: React.ReactNode; number: string; id: string }) {
   return (
-    <h2 className="section-header">
-      <span>[ {children} ]</span>
-    </h2>
+    <div className="section-heading">
+      <span className="section-number" aria-hidden="true">{number}</span>
+      <h2 id={id}>{children}</h2>
+      <span className="section-heading-mark" aria-hidden="true">+</span>
+    </div>
   );
 }

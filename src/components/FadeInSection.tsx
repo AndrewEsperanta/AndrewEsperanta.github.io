@@ -6,26 +6,18 @@ export function FadeInSection({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("visible");
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(el);
+    const element = ref.current;
+    if (!element || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Keep content visible without JavaScript; animation is progressive enhancement.
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        element.classList.add("is-revealed");
+        observer.unobserve(element);
+      }
+    }, { threshold: 0.08 });
+    observer.observe(element);
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div ref={ref} className="fade-in-section">
-      {children}
-    </div>
-  );
+  return <div ref={ref} className="reveal-section">{children}</div>;
 }

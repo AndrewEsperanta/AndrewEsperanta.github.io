@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Share_Tech_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { ScanlineOverlay } from "@/components/ScanlineOverlay";
-import { TopoBackground } from "@/components/TopoBackground";
 
-const shareTechMono = Share_Tech_Mono({
-  weight: "400",
+const mono = IBM_Plex_Mono({
+  weight: ["400", "500"],
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-plex",
+  display: "swap",
 });
 
-const inter = Inter({
+const sans = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-grotesk",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,21 +25,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${shareTechMono.variable} ${inter.variable}`}>
-      <body>
-        <ScanlineOverlay />
-        <div className="grid-bg">
-          <TopoBackground />
-          <div className="ascii-bg" aria-hidden="true" />
-          {children}
-        </div>
-      </body>
+    <html lang="en" className={`${mono.variable} ${sans.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
