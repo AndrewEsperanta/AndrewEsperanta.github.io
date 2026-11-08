@@ -2,7 +2,7 @@
 
 Personal profile page built with Next.js, styled as an Arknights-inspired editorial operator dossier. The design pairs large Space Grotesk typography with IBM Plex Mono labels, a charcoal and mint palette, the original ASCII character artwork, and custom research diagrams.
 
-The original biography, assignment, five research directives, and GitHub destination are preserved. The layout adapts from mobile to desktop and includes keyboard navigation, visible focus states, reduced-motion support, and readable content without JavaScript.
+The profile presents an AI Algorithm Engineer and AI Technical Artist in Training, the current FTE Researcher role at VAST, the previous Research Intern experience, and four research directives. The layout adapts from mobile to desktop and includes keyboard navigation, visible focus states, reduced-motion support, and readable content without JavaScript.
 
 ## Development
 

@@ -7,12 +7,20 @@ export function About() {
       <div className="assignment-body">
         <div className="assignment-role">
           <div className="status-label"><span className="status-dot" />Active</div>
-          <h3>Research Intern</h3>
+          <h3>FTE Researcher</h3>
           <p className="organization"><span aria-hidden="true">↗</span> VAST AI Research</p>
         </div>
         <div className="assignment-detail">
           <span className="detail-cross" aria-hidden="true">✳</span>
-          <p>Working on generative AI systems at the intersection of 3D understanding, world simulation, and code-driven content creation.</p>
+          <p>Exploring generative AI for game assets, AI-native workflows, 3D content, and rendering.</p>
+        </div>
+      </div>
+      <div className="assignment-history" aria-labelledby="experience-heading">
+        <h3 id="experience-heading">Previous Experience</h3>
+        <div className="history-role">
+          <h4>Research Intern</h4>
+          <p>VAST AI Research</p>
+          <p className="history-description">Working on generative AI systems at the intersection of 3D understanding, world simulation, and code-driven content creation.</p>
         </div>
       </div>
     </section>

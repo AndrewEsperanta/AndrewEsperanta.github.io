@@ -1,13 +1,13 @@
 export const RESEARCH_INTERESTS = [
   {
     id: "01",
-    title: "Game-as-Code",
-    description: "Agentic generation of games through code-driven pipelines",
+    title: "Game Assets Generation",
+    description: "Generative models for game asset creation",
   },
   {
     id: "02",
-    title: "3D-as-Code",
-    description: "Agentic generation of 3D scenes via programmatic representations",
+    title: "AI-Native Game Workflow",
+    description: "Game development workflows built around AI",
   },
   {
     id: "03",
@@ -16,13 +16,8 @@ export const RESEARCH_INTERESTS = [
   },
   {
     id: "04",
-    title: "World Model",
-    description: "Learning predictive models of interactive environments",
-  },
-  {
-    id: "05",
-    title: "Video Gen",
-    description: "Generative models for coherent video synthesis",
+    title: "Generative Rendering",
+    description: "Generative models for image synthesis and rendering",
   },
 ];
 

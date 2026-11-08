@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { RESEARCH_INTERESTS } from "@/lib/constants";
 
 export function Hero() {
   return (
@@ -6,7 +7,10 @@ export function Hero() {
       <div className="hero-copy">
         <p className="eyebrow hero-eyebrow"><span className="small-cross" aria-hidden="true" />Rhodes Island // Operator File</p>
         <h1 id="profile-name"><span>Andrew</span><span className="name-accent">Esperanta<span className="name-period" aria-hidden="true">.</span></span></h1>
-        <p className="hero-role">AI Researcher <span className="ampersand">&</span> Engineer</p>
+        <p className="hero-role">
+          <span>AI Algorithm Engineer</span>
+          <span className="hero-role-secondary"><span className="role-plus">+</span> AI Technical Artist in Training</span>
+        </p>
         <div className="hero-description">
           <span className="prompt-symbol" aria-hidden="true">↳</span>
           <p>Exploring the frontiers of<br className="desktop-break" /> generative intelligence<span className="typing-cursor" aria-hidden="true">_</span></p>
@@ -20,7 +24,7 @@ export function Hero() {
         <span className="art-corner corner-tl" /><span className="art-corner corner-tr" />
         <span className="art-corner corner-bl" /><span className="art-corner corner-br" />
         <span className="art-label">AE / OPERATOR FILE</span>
-        <span className="art-coordinate">[ 01 — 05 ]</span>
+        <span className="art-coordinate">[ 01 — {String(RESEARCH_INTERESTS.length).padStart(2, "0")} ]</span>
         <div className="art-bars">{Array.from({ length: 36 }, (_, i) => <i key={i} />)}</div>
         <span className="art-plus">+</span>
       </div>

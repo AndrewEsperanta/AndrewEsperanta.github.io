@@ -17,10 +17,10 @@ const sans = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Andrew Esperanta // Operator File",
-  description: "Personal profile of Andrew Esperanta — AI Research, 3D Generation, World Models",
+  description: "Andrew Esperanta — AI Algorithm Engineer, AI Technical Artist in Training, and FTE Researcher at VAST. Game assets, AI-native workflows, 3D generation, and generative rendering.",
   openGraph: {
     title: "Andrew Esperanta // Operator File",
-    description: "AI Research, 3D Generation, World Models",
+    description: "AI Algorithm Engineer + AI Technical Artist in Training. FTE Researcher at VAST. Game assets, AI-native workflows, 3D generation, and generative rendering.",
     type: "website",
   },
 };
