@@ -8,7 +8,7 @@ export function Hero() {
         <p className="eyebrow hero-eyebrow"><span className="small-cross" aria-hidden="true" />Rhodes Island // Operator File</p>
         <h1 id="profile-name"><span>Andrew</span><span className="name-accent">Esperanta<span className="name-period" aria-hidden="true">.</span></span></h1>
         <p className="hero-role">
-          <span>AI Algorithm Engineer</span>
+          <span>AI-Native Engineer</span>
           <span className="hero-role-secondary"><span className="role-plus">+</span> AI Technical Artist in Training</span>
         </p>
         <div className="hero-description">
